@@ -1,0 +1,7 @@
+# REGOLA: tutto è PRIVATO di default. Viene pubblicato SOLO ciò che sta in src/.
+# (GitHub Pages pubblica src/ via Actions — mai mettere lì materiale interno)
+/*
+!src/
+!.github/
+!.gitignore
+!README.md
