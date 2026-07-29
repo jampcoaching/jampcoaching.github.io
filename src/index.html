@@ -305,11 +305,10 @@
         <ul>
           <li>Valutazione iniziale con test e classificazione qualità: pulito o da correggere</li>
           <li>Programma personalizzato, aggiornato a ogni check</li>
-          <li>Analisi video dei tuoi esercizi, correzioni entro 48h</li>
           <li>Dimagrimento guidato dall'allenamento: monitoraggio di peso, foto e misure con lettura del trend e adattamento del programma</li>
           <li>Check-in settimanale su peso, foto e progressi + revisione mensile completa</li>
           <li>Tracker condiviso con progressi, test e skill sbloccate</li>
-          <li>Chat per dubbi tecnici, risposta entro 48h</li>
+          <li>Analisi video dei tuoi esercizi inviati e chat per dubbi tecnici, risposta entro 48h</li>
           <li>Video-call 1:1 ogni 2 settimane (30–45 min) per fare il punto</li>
         </ul>
         <a href="#candidatura" class="btn btn-primary" style="justify-content:center;">Candidati al coaching</a>
@@ -423,56 +422,16 @@
           </select>
         </div>
       </div>
-      <div class="row2">
-        <div class="field">
-          <label for="trazioni">Trazioni pulite consecutive *</label>
-          <input type="number" id="trazioni" name="Trazioni pulite" min="0" required>
-        </div>
-        <div class="field">
-          <label for="dips">Dips pulite consecutive *</label>
-          <input type="number" id="dips" name="Dips pulite" min="0" required>
-        </div>
-      </div>
-      <div class="row2">
-        <div class="field">
-          <label for="hang">Tenuta attiva alla sbarra <small>(secondi)</small> *</label>
-          <input type="number" id="hang" name="Tenuta sbarra (sec)" min="0" required>
-        </div>
-        <div class="field">
-          <label for="muscleup">Muscle up *</label>
-          <select id="muscleup" name="Muscle Up" required>
-            <option value="" disabled selected>Scegli…</option>
-            <option>Non ancora</option>
-            <option>Ci sto lavorando (transizione)</option>
-            <option>Sì, ma da pulire</option>
-            <option>Sì, pulito</option>
-          </select>
-        </div>
-      </div>
-      <div class="row2">
-        <div class="field">
-          <label for="planche">Livello planche *</label>
-          <select id="planche" name="Planche" required>
-            <option value="" disabled selected>Scegli…</option>
-            <option>Non ancora</option>
-            <option>Tuck</option>
-            <option>Advanced tuck</option>
-            <option>Straddle</option>
-            <option>Vicino al full</option>
-            <option>Full — pronto per varianti più difficili</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="frontlever">Livello front lever *</label>
-          <select id="frontlever" name="Front Lever" required>
-            <option value="" disabled selected>Scegli…</option>
-            <option>Non ancora</option>
-            <option>Tuck</option>
-            <option>Advanced tuck</option>
-            <option>Straddle</option>
-            <option>Full</option>
-          </select>
-        </div>
+      <div class="field">
+        <label for="livello">Il tuo livello attuale *</label>
+        <select id="livello" name="Livello attuale" required>
+          <option value="" disabled selected>Scegli…</option>
+          <option>Parto da zero — non faccio ancora trazioni/dips pulite</option>
+          <option>Faccio trazioni e dips pulite, niente skill ancora</option>
+          <option>Sto lavorando alle prime skill (muscle up, verticale)</option>
+          <option>Ho già muscle up e/o le prime progressioni di planche/front lever (tuck-advanced tuck)</option>
+          <option>Skill avanzate (planche/front lever straddle o oltre) — cerco progressioni più difficili</option>
+        </select>
       </div>
       <div class="field">
         <label for="obiettivo">Obiettivo principale *</label>
