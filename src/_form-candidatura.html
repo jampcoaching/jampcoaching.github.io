@@ -1,0 +1,104 @@
+    <form action="https://formsubmit.co/info@jampcoaching.it" method="POST">
+      <input type="hidden" name="_subject" value="Nuova candidatura coaching calisthenics">
+      <input type="hidden" name="_next" value="https://jampcoaching.github.io/grazie.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="Candidatura ricevuta! Grazie per la fiducia — la sto leggendo e ti rispondo entro 24-48 ore per fissare la call conoscitiva gratuita. Tieni d'occhio anche la cartella spam. A presto — JampCoaching">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none">
+      <div class="row2">
+        <div class="field">
+          <label for="nome">Nome e cognome *</label>
+          <input type="text" id="nome" name="Nome e cognome" required>
+        </div>
+        <div class="field">
+          <label for="eta">Età *</label>
+          <input type="number" id="eta" name="Età" min="14" max="99" required>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="background">Da dove vieni? *</label>
+          <select id="background" name="Background" required>
+            <option value="" disabled selected>Scegli…</option>
+            <option>Palestra / pesi</option>
+            <option>Calisthenics</option>
+            <option>Altro sport</option>
+            <option>Nessun background — parto da zero</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="esperienza">Da quanto fai calisthenics? *</label>
+          <select id="esperienza" name="Esperienza calisthenics" required>
+            <option value="" disabled selected>Scegli…</option>
+            <option>Non ancora iniziato</option>
+            <option>Meno di 6 mesi</option>
+            <option>6–12 mesi</option>
+            <option>1–2 anni</option>
+            <option>2+ anni</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="livello">Il tuo livello attuale *</label>
+        <select id="livello" name="Livello attuale" required>
+          <option value="" disabled selected>Scegli…</option>
+          <option>Parto da zero — non faccio ancora trazioni/dips pulite</option>
+          <option>Faccio trazioni e dips pulite, niente skill ancora</option>
+          <option>Sto lavorando alle prime skill (muscle up, verticale)</option>
+          <option>Ho già muscle up e/o le prime progressioni di planche/front lever (tuck-advanced tuck)</option>
+          <option>Skill avanzate (planche/front lever straddle o oltre) — cerco progressioni più difficili</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="obiettivo">Obiettivo principale *</label>
+        <select id="obiettivo" name="Obiettivo" required>
+          <option value="" disabled selected>Scegli…</option>
+          <option>Dimagrire + prime skill</option>
+          <option>Fondamenta / iniziare da zero</option>
+          <option>Primo Muscle Up</option>
+          <option>Verticale libera</option>
+          <option>Planche</option>
+          <option>Front lever</option>
+          <option>Altro (scrivilo sotto)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="difficolta">Cosa trovi più difficile nel tuo allenamento, oggi? *</label>
+        <textarea id="difficolta" name="Difficoltà principale" required></textarea>
+      </div>
+      <div class="field">
+        <label for="onesta">Sinceramente, quale ti descrive meglio? *</label>
+        <select id="onesta" name="Onestamente sei" required>
+          <option value="" disabled selected>Scegli…</option>
+          <option>Incostante ma motivato/a</option>
+          <option>Costante e voglio fare sul serio</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="investire">Se ti accetto, sei pronto/a a investire nel percorso (€499)? *</label>
+        <select id="investire" name="Pronto a investire" required>
+          <option value="" disabled selected>Scegli…</option>
+          <option>Sì</option>
+          <option>Forse</option>
+        </select>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+        <div class="field">
+          <label for="telefono">Instagram / WhatsApp <small>(opzionale)</small></label>
+          <input type="text" id="telefono" name="Instagram/WhatsApp">
+        </div>
+      </div>
+      <div class="field">
+        <label for="note">Altro da dirmi <small>(infortuni, dubbi, dettagli)</small></label>
+        <textarea id="note" name="Note"></textarea>
+      </div>
+      <div class="field consent">
+        <input type="checkbox" id="privacy" name="Consenso privacy" value="Sì — consenso espresso" required>
+        <label for="privacy">Ho letto l'<a href="privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per gestire la candidatura, incluse le eventuali informazioni sulla salute (es. infortuni) che scelgo di condividere nel form. *</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-big" style="width:100%;justify-content:center;">Invia candidatura</button>
+    </form>

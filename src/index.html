@@ -194,7 +194,7 @@
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-ctas">
-      <a href="#candidatura" class="btn btn-primary">Candidati</a>
+      <a href="#candidatura" class="btn btn-primary">Avvisami alla riapertura</a>
     </div>
   </div>
 </nav>
@@ -208,7 +208,7 @@
     </div>
     <h1><em>Dimagrisci</em> davvero.<br>Conquista le tue prime <em>skill</em> a corpo libero.<br>Il <em>salto</em> sono 12 settimane.</h1>
     <p>Jamp è questo: il salto da dove sei oggi a dove ti porto io. Coaching calisthenics 1:1 ad alta intensità di seguimento — valutazione con test reali, programma cucito su di te, correzioni continue. Ogni kg perso ti avvicina alle skill. Niente schede fotocopiate.</p>
-    <a href="#candidatura" class="btn btn-primary btn-big">Candidati al coaching →</a>
+    <a href="#candidatura" class="btn btn-primary btn-big">Entra in lista d'attesa →</a>
     <p style="margin-top:0.9rem;font-size:0.85rem;color:var(--muted);">I posti sono limitati per un motivo: seguo poche persone, ma le seguo davvero.</p>
   </div>
 </header>
@@ -291,13 +291,13 @@
   <div class="wrap">
     <span class="tag">Il coaching</span>
     <h2>Coaching 1:1 — 12 settimane</h2>
-    <p class="sub">Percorso personalizzato in 12 settimane. Ultimo posto rimasto a questo prezzo.</p>
+    <p class="sub">Percorso personalizzato in 12 settimane. Le iscrizioni riaprono a breve.</p>
     <div class="plans" style="max-width:420px;margin:0 auto;">
       <div class="plan featured">
-        <span class="ribbon">Ultimo posto</span>
+        <span class="ribbon">Iscrizioni chiuse</span>
         <h3>Coaching 1:1</h3>
         <div class="dur">12 settimane · percorso personalizzato</div>
-        <div class="price"><span style="text-decoration:line-through;color:var(--muted);font-size:0.55em;">€497</span> €297<span> una tantum — ultimo posto</span></div>
+        <div class="price">€499<span> una tantum</span></div>
         <ul>
           <li>Valutazione iniziale con test e classificazione qualità: pulito o da correggere</li>
           <li>Programma personalizzato, aggiornato a ogni check</li>
@@ -307,7 +307,7 @@
           <li>Analisi video dei tuoi esercizi inviati e chat per dubbi tecnici, risposta entro 48h</li>
           <li>Video-call 1:1 ogni 2 settimane (30–45 min) per fare il punto</li>
         </ul>
-        <a href="#candidatura" class="btn btn-primary" style="justify-content:center;">Candidati al coaching</a>
+        <a href="#candidatura" class="btn btn-primary" style="justify-content:center;">Entra in lista d'attesa</a>
       </div>
     </div>
     <div class="grid3" style="margin-top:2.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));max-width:820px;margin-left:auto;margin-right:auto;">
@@ -376,112 +376,33 @@
 <section id="candidatura" class="apply">
   <div class="wrap">
     <span class="tag">Candidatura</span>
-    <h2>Candidati al percorso</h2>
+    <h2>Iscrizioni chiuse</h2>
     <p class="sub">Non seguo chiunque per far numero: seguo chi si allena sul serio e vuole smettere di andare a caso. Rispondi con onestà — è quello che mi serve per capire se posso davvero aiutarti. Ti rispondo entro 24–48 ore per una call conoscitiva gratuita.</p>
-    <form action="https://formsubmit.co/info@jampcoaching.it" method="POST">
-      <input type="hidden" name="_subject" value="Nuova candidatura coaching calisthenics">
-      <input type="hidden" name="_next" value="https://jampcoaching.github.io/grazie.html">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_autoresponse" value="Candidatura ricevuta! Grazie per la fiducia — la sto leggendo e ti rispondo entro 24-48 ore per fissare la call conoscitiva gratuita. Tieni d'occhio anche la cartella spam. A presto — JampCoaching">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="text" name="_honey" style="display:none">
-      <div class="row2">
-        <div class="field">
-          <label for="nome">Nome e cognome *</label>
-          <input type="text" id="nome" name="Nome e cognome" required>
-        </div>
-        <div class="field">
-          <label for="eta">Età *</label>
-          <input type="number" id="eta" name="Età" min="14" max="99" required>
-        </div>
+      <!-- ISCRIZIONI CHIUSE (temporaneo).
+           Il modulo di candidatura completo e' conservato in
+           src/_form-candidatura.html: per riaprire, reincollarlo al posto di
+           questo blocco. Qui resta una lista d'attesa e non un vicolo cieco:
+           chi arriva adesso e' traffico gia' pagato, buttarlo via e' lo spreco
+           piu' costoso di una chiusura. -->
+      <div class="card" style="text-align:center;padding:2rem 1.5rem">
+        <div style="font-size:1.35rem;font-weight:800;margin-bottom:0.6rem">Iscrizioni temporaneamente chiuse</div>
+        <p style="color:var(--muted);max-width:46ch;margin:0 auto 1.4rem">
+          Sto seguendo gli atleti gia' in percorso e non apro nuovi posti finche'
+          non posso garantire lo stesso livello di attenzione. Lascia la tua email:
+          sei il primo a saperlo quando riapro, prima che la pagina torni pubblica.
+        </p>
+        <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
+              style="display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;max-width:440px;margin:0 auto">
+          <input type="hidden" name="_subject" value="Lista d'attesa coaching">
+          <input type="hidden" name="_next" value="https://jampcoaching.github.io/grazie.html">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Sei in lista d'attesa. Ti scrivo appena riapro le iscrizioni, prima che la pagina torni pubblica. — JampCoaching">
+          <input type="text" name="_honey" style="display:none">
+          <input type="email" name="Email" required placeholder="La tua email"
+                 style="flex:1;min-width:220px" aria-label="La tua email">
+          <button class="btn" type="submit">Avvisami</button>
+        </form>
       </div>
-      <div class="row2">
-        <div class="field">
-          <label for="background">Da dove vieni? *</label>
-          <select id="background" name="Background" required>
-            <option value="" disabled selected>Scegli…</option>
-            <option>Palestra / pesi</option>
-            <option>Calisthenics</option>
-            <option>Altro sport</option>
-            <option>Nessun background — parto da zero</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="esperienza">Da quanto fai calisthenics? *</label>
-          <select id="esperienza" name="Esperienza calisthenics" required>
-            <option value="" disabled selected>Scegli…</option>
-            <option>Non ancora iniziato</option>
-            <option>Meno di 6 mesi</option>
-            <option>6–12 mesi</option>
-            <option>1–2 anni</option>
-            <option>2+ anni</option>
-          </select>
-        </div>
-      </div>
-      <div class="field">
-        <label for="livello">Il tuo livello attuale *</label>
-        <select id="livello" name="Livello attuale" required>
-          <option value="" disabled selected>Scegli…</option>
-          <option>Parto da zero — non faccio ancora trazioni/dips pulite</option>
-          <option>Faccio trazioni e dips pulite, niente skill ancora</option>
-          <option>Sto lavorando alle prime skill (muscle up, verticale)</option>
-          <option>Ho già muscle up e/o le prime progressioni di planche/front lever (tuck-advanced tuck)</option>
-          <option>Skill avanzate (planche/front lever straddle o oltre) — cerco progressioni più difficili</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="obiettivo">Obiettivo principale *</label>
-        <select id="obiettivo" name="Obiettivo" required>
-          <option value="" disabled selected>Scegli…</option>
-          <option>Dimagrire + prime skill</option>
-          <option>Fondamenta / iniziare da zero</option>
-          <option>Primo Muscle Up</option>
-          <option>Verticale libera</option>
-          <option>Planche</option>
-          <option>Front lever</option>
-          <option>Altro (scrivilo sotto)</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="difficolta">Cosa trovi più difficile nel tuo allenamento, oggi? *</label>
-        <textarea id="difficolta" name="Difficoltà principale" required></textarea>
-      </div>
-      <div class="field">
-        <label for="onesta">Sinceramente, quale ti descrive meglio? *</label>
-        <select id="onesta" name="Onestamente sei" required>
-          <option value="" disabled selected>Scegli…</option>
-          <option>Incostante ma motivato/a</option>
-          <option>Costante e voglio fare sul serio</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="investire">Se ti accetto, sei pronto/a a investire nel percorso (€297)? *</label>
-        <select id="investire" name="Pronto a investire" required>
-          <option value="" disabled selected>Scegli…</option>
-          <option>Sì</option>
-          <option>Forse</option>
-        </select>
-      </div>
-      <div class="row2">
-        <div class="field">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="Email" required>
-        </div>
-        <div class="field">
-          <label for="telefono">Instagram / WhatsApp <small>(opzionale)</small></label>
-          <input type="text" id="telefono" name="Instagram/WhatsApp">
-        </div>
-      </div>
-      <div class="field">
-        <label for="note">Altro da dirmi <small>(infortuni, dubbi, dettagli)</small></label>
-        <textarea id="note" name="Note"></textarea>
-      </div>
-      <div class="field consent">
-        <input type="checkbox" id="privacy" name="Consenso privacy" value="Sì — consenso espresso" required>
-        <label for="privacy">Ho letto l'<a href="privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per gestire la candidatura, incluse le eventuali informazioni sulla salute (es. infortuni) che scelgo di condividere nel form. *</label>
-      </div>
-      <button type="submit" class="btn btn-primary btn-big" style="width:100%;justify-content:center;">Invia candidatura</button>
-    </form>
   </div>
 </section>
 
