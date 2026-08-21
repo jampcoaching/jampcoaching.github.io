@@ -392,6 +392,7 @@
           sei il primo a saperlo quando riapro, prima che la pagina torni pubblica.
         </p>
         <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
+              onsubmit="salvaInAttesa(this)"
               style="display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;max-width:440px;margin:0 auto">
           <input type="hidden" name="_subject" value="Lista d'attesa coaching">
           <input type="hidden" name="_next" value="https://jampcoaching.github.io/grazie.html">
@@ -412,5 +413,30 @@
   <p style="margin-top:0.5rem;"><a href="privacy.html">Informativa privacy</a> · <a href="termini.html">Termini e condizioni</a></p>
 </footer>
 
+
+<script>
+// L'email va in DUE posti, di proposito:
+//  - formsubmit (action del modulo): ti recapita subito la notifica in casella;
+//  - il backend: costruisce la lista vera, deduplicata e interrogabile, cosi' alla
+//    riapertura non devi ripescare gli indirizzi uno per uno dalla posta.
+// Il salvataggio nel database e' un'aggiunta, non una sostituzione: se il backend
+// fosse spento o lento, il modulo parte lo stesso e l'iscrizione non si perde.
+// keepalive:true serve perche' la pagina sta gia' navigando via mentre la chiamata
+// e' in volo — senza, il browser la annullerebbe.
+function salvaInAttesa(form) {
+  try {
+    var email = (form.querySelector('input[name="Email"]') || {}).value;
+    if (email) {
+      fetch('https://app.jampcoaching.it/public/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: 'sito-lista-attesa' }),
+        keepalive: true,
+      }).catch(function () {});
+    }
+  } catch (e) {}
+  return true;   // il modulo prosegue comunque verso formsubmit
+}
+</script>
 </body>
 </html>
