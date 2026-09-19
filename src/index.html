@@ -97,6 +97,18 @@
       border:1px solid var(--border);border-radius:99px;padding:0.3rem 0.9rem;
       background:var(--surface);
     }
+    .cd-unit{
+      background:var(--card);border:1px solid var(--border);border-radius:10px;
+      padding:0.55rem 0.85rem;text-align:center;min-width:58px;
+    }
+    .cd-unit span{
+      display:block;font-size:1.5rem;font-weight:800;color:var(--accent);
+      font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-0.5px;
+    }
+    .cd-unit small{
+      display:block;font-size:0.62rem;color:var(--muted);text-transform:uppercase;
+      letter-spacing:0.5px;margin-top:3px;
+    }
 
     .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;}
     .card{
@@ -209,7 +221,15 @@
     <h1><em>Dimagrisci</em> davvero.<br>Conquista le tue prime <em>skill</em> a corpo libero.<br>Il <em>salto</em> sono 12 settimane.</h1>
     <p>Jamp è questo: il salto da dove sei oggi a dove ti porto io. Coaching calisthenics 1:1 ad alta intensità di seguimento — valutazione con test reali, programma cucito su di te, correzioni continue. Ogni kg perso ti avvicina alle skill. Niente schede fotocopiate.</p>
     <a href="#percorsi" class="btn btn-primary btn-big">Candidati al coaching →</a>
-    <p style="margin-top:0.9rem;font-size:0.85rem;color:var(--muted);">Le iscrizioni sono chiuse: seguo poche persone e le seguo davvero. Ti avviso appena riapro.</p>
+    <div style="margin-top:1.4rem">
+      <p style="font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent2);margin-bottom:0.6rem;">Riapro le iscrizioni tra</p>
+      <div id="countdown" style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+        <div class="cd-unit"><span id="cd-d">–</span><small>giorni</small></div>
+        <div class="cd-unit"><span id="cd-h">–</span><small>ore</small></div>
+        <div class="cd-unit"><span id="cd-m">–</span><small>min</small></div>
+        <div class="cd-unit"><span id="cd-s">–</span><small>sec</small></div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -267,7 +287,7 @@
       <div class="card">
         <span class="num">3</span>
         <h3>Check e correzioni</h3>
-        <p>Mi mandi i video dei tuoi esercizi quando ti alleni: li analizzo, ti correggo e si progredisce solo quando la qualità lo permette. Più una call 1:1 ogni 2 settimane per fare il punto. Zero infortuni come regola numero uno.</p>
+        <p>Mi mandi i video dei tuoi esercizi quando ti alleni: li analizzo, ti correggo e si progredisce solo quando la qualità lo permette. Zero infortuni come regola numero uno.</p>
       </div>
     </div>
   </div>
@@ -305,7 +325,6 @@
           <li>Check-in settimanale su peso, foto e progressi + revisione mensile completa</li>
           <li>Tracker condiviso con progressi, test e skill sbloccate</li>
           <li>Analisi video dei tuoi esercizi inviati e chat per dubbi tecnici, risposta entro 48h</li>
-          <li>Video-call 1:1 ogni 2 settimane (30–45 min) per fare il punto</li>
         </ul>
         <a href="#candidatura" class="btn btn-primary" style="justify-content:center;">Entra in lista d'attesa</a>
       </div>
@@ -342,7 +361,7 @@
     </details>
     <details class="faq-item">
       <summary>Come funzionano i check?</summary>
-      <div>Mi mandi i video degli esercizi chiave quando ti alleni: valuto ogni movimento — pulito o da correggere — ti rispondo con le correzioni e aggiorno la scheda di conseguenza. Una volta a settimana ci vediamo in call per fare il punto. Tutto resta tracciato nel tuo tracker condiviso.</div>
+      <div>Mi mandi i video degli esercizi chiave quando ti alleni: valuto ogni movimento — pulito o da correggere — ti rispondo con le correzioni e aggiorno la scheda di conseguenza. Tutto resta tracciato nel tuo tracker condiviso.</div>
     </details>
     <details class="faq-item">
       <summary>Perché costa più di una scheda online?</summary>
@@ -437,6 +456,25 @@ function salvaInAttesa(form) {
   } catch (e) {}
   return true;   // il modulo prosegue comunque verso formsubmit
 }
+
+// Countdown alla riapertura — DATA DA CONFERMARE: 10 giorni da quando l'abbiamo
+// impostato (2026-09-20), alle 20:00. Cambiare qui la stringa quando la data
+// reale del rilascio e' decisa (Stripe pronto, non solo hype).
+(function () {
+  var target = new Date('2026-09-30T20:00:00+02:00').getTime();
+  var els = { d: document.getElementById('cd-d'), h: document.getElementById('cd-h'), m: document.getElementById('cd-m'), s: document.getElementById('cd-s') };
+  if (!els.d) return;
+  function due(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var diff = Math.max(0, target - Date.now());
+    els.d.textContent = Math.floor(diff / 86400000);
+    els.h.textContent = due(Math.floor(diff % 86400000 / 3600000));
+    els.m.textContent = due(Math.floor(diff % 3600000 / 60000));
+    els.s.textContent = due(Math.floor(diff % 60000 / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
 </script>
 </body>
 </html>
