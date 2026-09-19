@@ -457,11 +457,9 @@ function salvaInAttesa(form) {
   return true;   // il modulo prosegue comunque verso formsubmit
 }
 
-// Countdown alla riapertura — DATA DA CONFERMARE: 10 giorni da quando l'abbiamo
-// impostato (2026-09-20), alle 20:00. Cambiare qui la stringa quando la data
-// reale del rilascio e' decisa (Stripe pronto, non solo hype).
+// Countdown alla riapertura — rilascio confermato 2026-10-01.
 (function () {
-  var target = new Date('2026-09-30T20:00:00+02:00').getTime();
+  var target = new Date('2026-10-01T00:00:00+02:00').getTime();
   var els = { d: document.getElementById('cd-d'), h: document.getElementById('cd-h'), m: document.getElementById('cd-m'), s: document.getElementById('cd-s') };
   if (!els.d) return;
   function due(n) { return String(n).padStart(2, '0'); }
