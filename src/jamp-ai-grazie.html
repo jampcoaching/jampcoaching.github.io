@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento ricevuto — JampCoaching</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+      background:#0a0807;color:#f5f2ed;min-height:100vh;
+      display:flex;align-items:center;justify-content:center;padding:1.5rem;line-height:1.6;
+    }
+    .box{max-width:480px;width:100%;text-align:center;}
+    h1{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-0.5px;margin-bottom:0.7rem;}
+    p{color:#a89c93;margin-bottom:1.2rem;}
+    .check{
+      width:64px;height:64px;border-radius:50%;margin:0 auto 1.3rem;
+      background:rgba(34,197,94,0.12);color:#22c55e;font-size:1.9rem;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .spinner{
+      width:32px;height:32px;border-radius:50%;margin:0 auto 1.3rem;
+      border:3px solid rgba(255,74,31,0.2);border-top-color:#ff4a1f;
+      animation:girare .7s linear infinite;
+    }
+    @keyframes girare{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){ .spinner{animation-duration:1.6s} }
+    .codice-box{
+      background:#1a1310;border:1px solid rgba(255,74,31,0.3);border-radius:12px;
+      padding:1.3rem 1.5rem;margin:1.3rem 0;
+    }
+    .codice-box .etichetta{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#ff7a4d;margin-bottom:0.5rem;}
+    .codice{font-family:'IBM Plex Mono',monospace;font-size:1.7rem;font-weight:700;letter-spacing:2px;color:#f5f2ed;word-break:break-all;}
+    .passi{text-align:left;color:#a89c93;font-size:0.92rem;margin:1.3rem 0;padding-left:1.2rem;}
+    .passi li{margin-bottom:0.5rem;}
+    a.btn{
+      display:inline-block;background:linear-gradient(135deg,#e63b12,#ff4a1f);
+      color:#fff;font-weight:700;text-decoration:none;
+      padding:0.85rem 1.9rem;border-radius:10px;margin-top:0.5rem;
+    }
+    .err{color:#ff8a72;}
+  </style>
+</head>
+<body>
+  <div class="box" id="box">
+    <div class="spinner"></div>
+    <h1>Un secondo…</h1>
+    <p>Sto confermando il pagamento con Stripe.</p>
+  </div>
+
+  <script>
+    // Riceve il session_id che Stripe aggiunge da solo alla success_url
+    // ({CHECKOUT_SESSION_ID}, sostituito da Stripe prima del redirect) e chiede al
+    // backend il codice invito generato per questo abbonamento — vedi
+    // esitoCheckoutJampAi in pagamenti.service.ts. Idempotente col webhook: se la
+    // persona ricarica questa pagina, ritrova lo STESSO codice, non uno nuovo.
+    (function () {
+      var box = document.getElementById('box');
+      var params = new URLSearchParams(location.search);
+      var sessionId = params.get('session_id');
+
+      function mostraErrore(msg) {
+        box.innerHTML =
+          '<h1 class="err">Qualcosa non è andato</h1>' +
+          '<p>' + msg + '</p>' +
+          '<p style="font-size:0.85rem">Se hai pagato ma vedi questo messaggio, scrivimi: il pagamento è comunque tracciato su Stripe, non hai perso nulla.</p>' +
+          '<a class="btn" href="index.html">← Torna al sito</a>';
+      }
+
+      if (!sessionId) {
+        mostraErrore('Manca il riferimento del pagamento nell\'indirizzo della pagina.');
+        return;
+      }
+
+      fetch('https://app.jampcoaching.it/public/jamp-ai/esito?session_id=' + encodeURIComponent(sessionId))
+        .then(function (res) { return res.json().then(function (d) { return { ok: res.ok, d: d }; }); })
+        .then(function (r) {
+          if (!r.ok || !r.d.codice) {
+            mostraErrore('Non riesco a confermare il pagamento in questo momento. Riprova fra qualche minuto ricaricando la pagina.');
+            return;
+          }
+          var codice = r.d.codice;
+          box.innerHTML =
+            '<div class="check">✓</div>' +
+            '<h1>Pagamento ricevuto!</h1>' +
+            '<p>Benvenuto in Jamp AI. Ecco il tuo codice — ti serve per entrare nell\'app:</p>' +
+            '<div class="codice-box"><div class="etichetta">Il tuo codice</div><div class="codice">' + codice + '</div></div>' +
+            '<ol class="passi">' +
+              '<li>Apri <strong>app.jampcoaching.it</strong> sul telefono e installala (Aggiungi a Home / Installa app)</li>' +
+              '<li>Aprila dall\'icona appena creata</li>' +
+              '<li>Inserisci il codice qui sopra: la tua scheda ti aspetta già</li>' +
+            '</ol>' +
+            '<a class="btn" href="https://app.jampcoaching.it/benvenuto.html?codice=' + encodeURIComponent(codice) + '">Entra ora →</a>';
+        })
+        .catch(function () {
+          mostraErrore('Errore di connessione. Riprova fra qualche minuto ricaricando la pagina.');
+        });
+    })();
+  </script>
+</body>
+</html>
