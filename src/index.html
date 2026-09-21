@@ -328,7 +328,21 @@
           <li>Tracker condiviso, skill e progressi</li>
           <li>Chat per dubbi tecnici, risposta entro 48h</li>
         </ul>
-        <a href="#candidatura" class="btn btn-primary" style="justify-content:center;margin-top:auto">Entra in lista d'attesa</a>
+        <div style="margin-top:auto">
+          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem">Sto seguendo gli atleti già in percorso e non apro nuovi posti finché non posso garantire lo stesso livello di attenzione. Lascia la tua email: sei il primo a saperlo quando riapro.</p>
+          <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
+                onsubmit="salvaInAttesa(this)" style="display:flex;flex-direction:column;gap:0.6rem">
+            <input type="hidden" name="_subject" value="Lista d'attesa coaching 1:1">
+            <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Sei in lista d'attesa per il coaching 1:1. Ti scrivo appena riapro le iscrizioni. — JampCoaching">
+            <input type="hidden" name="_source" value="coaching-1-1">
+            <input type="text" name="_honey" style="display:none">
+            <label for="c11-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">La tua email</label>
+            <input type="email" id="c11-email" name="Email" required placeholder="La tua email">
+            <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Avvisami quando riapro</button>
+          </form>
+        </div>
       </div>
 
       <div class="plan">
@@ -365,7 +379,7 @@
               onsubmit="salvaInAttesa(this)"
               style="margin:auto 0 0;display:flex;flex-direction:column;gap:0.6rem">
           <input type="hidden" name="_subject" value="Interesse Jamp Infrastruttura">
-          <input type="hidden" name="_next" value="https://jampcoaching.github.io/grazie.html">
+          <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_autoresponse" value="Grazie dell'interesse per Jamp Infrastruttura — è ancora in lavorazione, ti scrivo io appena è pronta da mostrare. — JampCoaching">
           <input type="hidden" name="_source" value="jamp-infrastruttura">
@@ -432,35 +446,6 @@
       <p style="color:var(--muted);font-size:0.95rem;margin-bottom:0.8rem;">Da lì è stata tutta salita. Ho applicato su me stesso lo stesso metodo che uso con chi seguo — e ci ho messo testa e pazienza per riprendere skill che avevo già tenuto una volta. Oggi le ho quasi tutte recuperate; il front lever lo tengo ancora meno di prima, ci sto lavorando. Non è un progresso lineare né perfetto — è che non ho mollato, ed è esattamente quello che chiedo a chi seguo.</p>
       <p style="color:var(--muted);font-size:0.85rem;border:1px dashed var(--border);border-radius:10px;padding:0.9rem 1rem;">[Screenshot del calendario reale — agosto e settembre 2026 — da inserire qui: la prova è nell'app, non nelle parole]</p>
     </div>
-  </div>
-</section>
-
-<section id="candidatura" class="apply">
-  <div class="wrap">
-    <span class="tag">Lista d'attesa</span>
-    <h2>Coaching 1:1 — pochi posti</h2>
-    <p class="sub">Non seguo chiunque per far numero: seguo poche persone e le seguo davvero. Per questo adesso non apro nuovi posti. Lascia la tua email e sei il primo a saperlo quando riapro.</p>
-      <div class="card" style="text-align:center;padding:2rem 1.5rem">
-        <div style="font-size:1.35rem;font-weight:800;margin-bottom:0.6rem;font-family:'Big Shoulders Display',sans-serif;">Iscrizioni al coaching 1:1 temporaneamente chiuse</div>
-        <p style="color:var(--muted);max-width:46ch;margin:0 auto 1.4rem">
-          Sto seguendo gli atleti gia' in percorso e non apro nuovi posti finche'
-          non posso garantire lo stesso livello di attenzione. Lascia la tua email:
-          sei il primo a saperlo quando riapro, prima che la pagina torni pubblica.
-          (Jamp AI invece è già disponibile — lo trovi qui sopra tra i percorsi.)
-        </p>
-        <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
-              onsubmit="salvaInAttesa(this)"
-              style="display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;max-width:440px;margin:0 auto">
-          <input type="hidden" name="_subject" value="Lista d'attesa coaching 1:1">
-          <input type="hidden" name="_next" value="https://jampcoaching.github.io/grazie.html">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_autoresponse" value="Sei in lista d'attesa per il coaching 1:1. Ti scrivo appena riapro le iscrizioni. — JampCoaching">
-          <input type="text" name="_honey" style="display:none">
-          <input type="email" name="Email" required placeholder="La tua email"
-                 style="flex:1;min-width:220px;background:var(--card);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:0.95rem;padding:0.75rem 1rem" aria-label="La tua email">
-          <button class="btn btn-primary" type="submit">Avvisami</button>
-        </form>
-      </div>
   </div>
 </section>
 
