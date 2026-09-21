@@ -237,7 +237,7 @@
         <p>Provi le stesse progressioni da mesi, ma non sai se il problema è la tecnica o solo che ti serve più tempo. Nessuno te lo dice.</p>
       </div>
     </div>
-    <p style="margin-top:2rem;font-size:1.05rem;max-width:640px;"><strong>Non ti manca la forza di volontà. Ti manca un metodo — e qualcuno che non ti lasci mollare.</strong> <span style="color:var(--muted);">È esattamente il lavoro per cui esisto.</span></p>
+    <p style="margin-top:2rem;font-size:1.05rem;max-width:640px;"><strong>Non ti manca la forza di volontà. Ti manca un metodo — e un sistema che non ti lascia mollare.</strong> <span style="color:var(--muted);">È esattamente cosa fa Jamp: con un coach vero o con Jamp AI, sempre le stesse soglie tecniche.</span></p>
   </div>
 </section>
 
@@ -277,6 +277,11 @@
         <h3>Check e correzioni</h3>
         <p>Mandi i video dei tuoi esercizi quando ti alleni: li analizzo (o li legge Jamp AI, a seconda del percorso), ti correggo e si progredisce solo quando la qualità lo permette. Zero infortuni come regola numero uno.</p>
       </div>
+      <div class="card">
+        <span class="num">4</span>
+        <h3>Ri-test lungo il percorso</h3>
+        <p>Non solo all'inizio: quando raggiungi una soglia impostata come obiettivo — o a sorpresa — ti richiediamo il test. Stesso sistema di valutazione di prima, così il progresso si misura davvero, non si indovina.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -288,8 +293,8 @@
     <p class="sub">Il percorso si costruisce intorno a skill misurabili, non a sensazioni.</p>
     <div class="skills">
       <div class="skill">
-        <svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 15h9M13 15l4-4M13 15l4 4M4 9v10"/></svg>
-        <h3>Front Lever</h3><p>Dalla tuck alla advanced: corpo in linea, niente scorciatoie di bacino</p>
+        <svg class="skill-icon" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        <h3>Attivazione</h3><p>Spalle, scapole e core pronti prima di ogni skill — la base che previene gli infortuni</p>
       </div>
       <div class="skill">
         <svg class="skill-icon" viewBox="0 0 24 24"><rect x="3" y="14" width="7" height="6"/><rect x="14" y="14" width="7" height="6"/><rect x="8.5" y="7" width="7" height="6"/></svg>
@@ -302,6 +307,14 @@
       <div class="skill">
         <svg class="skill-icon" viewBox="0 0 24 24"><path d="M5 5v9a7 7 0 0 0 14 0V5M3 5h4M17 5h4"/><path d="M9 21h6"/></svg>
         <h3>Muscle Up</h3><p>Attivazione e propedeutica → trazioni → esplosione → prima rep pulita</p>
+      </div>
+      <div class="skill">
+        <svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 15h9M13 15l4-4M13 15l4 4M4 9v10"/></svg>
+        <h3>Front Lever</h3><p>Dalla tuck alla advanced: corpo in linea, niente scorciatoie di bacino</p>
+      </div>
+      <div class="skill">
+        <svg class="skill-icon" viewBox="0 0 24 24"><path d="M3 18h4l6-6h8M13 12l3-3"/></svg>
+        <h3>Planche</h3><p>Dalla tuck planche alla full: spalle avanti, bacino alto, niente compensi lombari</p>
       </div>
     </div>
   </div>
@@ -318,7 +331,7 @@
       <div class="plan featured">
         <span class="ribbon" style="background:var(--accent);color:#100b09">Pochi posti</span>
         <h3>Coaching 1:1</h3>
-        <div class="dur">seguimento esclusivo · mensile</div>
+        <div class="dur">100% online · seguimento esclusivo · mensile</div>
         <div class="price">€150<span> /mese</span></div>
         <ul>
           <li>Valutazione iniziale con test: pulito o da correggere</li>
@@ -358,9 +371,7 @@
           <li>Community e notifiche incluse</li>
         </ul>
         <div style="margin-top:auto">
-          <label for="jai-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">La tua email</label>
-          <input type="email" id="jai-email" placeholder="La tua email">
-          <button type="button" class="btn btn-primary" id="jai-btn" onclick="iniziaJampAi()" style="width:100%;justify-content:center">Inizia con Jamp AI</button>
+          <button type="button" class="btn btn-primary" id="jai-btn" onclick="iniziaJampAi()" style="width:100%;justify-content:center">Inizia con Jamp AI →</button>
           <div class="err" id="jai-err"></div>
         </div>
       </div>
@@ -369,11 +380,11 @@
         <span class="ribbon" style="background:var(--muted);color:#100b09">In lavorazione</span>
         <h3>Jamp Infrastruttura</h3>
         <div class="dur">per altri coach · in arrivo</div>
-        <div class="wip-price">Prezzo da definire</div>
+        <div class="wip-price">Per il prezzo: scrivimi</div>
         <ul style="margin-top:1.4rem">
           <li>La stessa struttura che uso per i miei atleti — tracker, percorso a skill, revisione AI</li>
           <li>La apri ai tuoi clienti, col tuo metodo, non il mio</li>
-          <li>Ancora in costruzione: lascia la tua email se vuoi essere tra i primi</li>
+          <li>Ancora in costruzione: manda la richiesta, ti richiamo o ti scrivo per spiegarti tutto</li>
         </ul>
         <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
               onsubmit="salvaInAttesa(this)"
@@ -385,7 +396,31 @@
           <input type="hidden" name="_source" value="jamp-infrastruttura">
           <input type="text" name="_honey" style="display:none">
           <input type="email" name="Email" required placeholder="La tua email" aria-label="La tua email">
-          <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Avvisami quando è pronta</button>
+          <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Manda la richiesta</button>
+        </form>
+      </div>
+
+      <div class="plan" style="border-style:dashed;">
+        <span class="ribbon" style="background:var(--muted);color:#100b09">In lavorazione</span>
+        <h3>Jamp Project</h3>
+        <div class="dur">consulenza per coach · in arrivo</div>
+        <div class="wip-price">Per il prezzo: scrivimi</div>
+        <ul style="margin-top:1.4rem">
+          <li>Non software: partiamo dal mio metodo e lo costruiamo su misura per il tuo brand</li>
+          <li>Confronto diretto con me su struttura, prezzi, posizionamento</li>
+          <li>Per chi vuole crearsi qualcosa di proprio, non affittare il mio</li>
+        </ul>
+        <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
+              onsubmit="salvaInAttesa(this)"
+              style="margin:auto 0 0;display:flex;flex-direction:column;gap:0.6rem">
+          <input type="hidden" name="_subject" value="Interesse Jamp Project">
+          <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Grazie dell'interesse per Jamp Project — è ancora in lavorazione, ti scrivo io appena posso parlartene. — JampCoaching">
+          <input type="hidden" name="_source" value="jamp-project">
+          <input type="text" name="_honey" style="display:none">
+          <input type="email" name="Email" required placeholder="La tua email" aria-label="La tua email">
+          <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Manda la richiesta</button>
         </form>
       </div>
 
@@ -431,7 +466,11 @@
     </details>
     <details class="faq-item">
       <summary>Cos'è Jamp Infrastruttura?</summary>
-      <div>L'idea di aprire la stessa struttura che uso per i miei atleti ad altri coach, per i loro clienti — tracker, percorso a skill, revisione AI, tutto già pronto. È ancora in lavorazione: se ti interessa, lascia la tua email nella sezione qui sopra.</div>
+      <div>L'idea di aprire la stessa struttura che uso per i miei atleti ad altri coach, per i loro clienti — tracker, percorso a skill, revisione AI, tutto già pronto. È ancora in lavorazione: se ti interessa, manda la richiesta nella sezione qui sopra.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Cos'è Jamp Project?</summary>
+      <div>Non è la mia infrastruttura in affitto: è una consulenza diretta con me per costruire qualcosa di tuo, sul tuo brand, partendo dal mio metodo e dalla mia esperienza. Pensato per chi opera nel settore e vuole crearsi un percorso proprio. Anche questo è ancora in lavorazione: manda la richiesta se ti interessa.</div>
     </details>
   </div>
 </section>
@@ -442,7 +481,7 @@
     <h2>Chi ti segue</h2>
     <p class="sub"></p>
     <div class="card" style="max-width:720px;">
-      <p style="color:var(--text);font-size:1.02rem;margin-bottom:0.8rem;">Mi sono allenato a corpo libero nel 2019-2020, poi mi sono fermato quattro anni — una spalla che non reggeva, e ogni volta che riprovavo a tornare cedeva di nuovo. Quest'anno ho ripreso sul serio: tre mesi di rinforzo in palestra sulla spalla, poi il 7 aprile 2026 sono tornato al calisthenics.</p>
+      <p style="color:var(--text);font-size:1.02rem;margin-bottom:0.8rem;">Mi sono allenato a corpo libero nel 2019-2020, poi mi sono fermato quattro, cinque anni — una spalla infortunata a snowboard che non reggeva, e ogni volta che riprovavo a tornare cedeva di nuovo. A gennaio 2026 ho fatto sul serio: tre mesi di rinforzo in palestra sulla spalla, poi il 7 aprile 2026 sono tornato al calisthenics.</p>
       <p style="color:var(--muted);font-size:0.95rem;margin-bottom:0.8rem;">Da lì è stata tutta salita. Ho applicato su me stesso lo stesso metodo che uso con chi seguo — e ci ho messo testa e pazienza per riprendere skill che avevo già tenuto una volta. Oggi le ho quasi tutte recuperate; il front lever lo tengo ancora meno di prima, ci sto lavorando. Non è un progresso lineare né perfetto — è che non ho mollato, ed è esattamente quello che chiedo a chi seguo.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.8rem;margin-top:0.6rem;">
         <figure style="margin:0;">
@@ -492,22 +531,16 @@ function salvaInAttesa(form) {
 }
 
 // Jamp AI: checkout vero, non piu' una lista d'attesa (conversazione 2026-09-21 —
-// "lo collegherei già al bottone se abbiamo già tutto il giro ok"). Il pagamento non
-// crea l'account: genera un codice invito che arriva mostrato sulla pagina di grazie
-// (jamp-ai-grazie.html), stesso meccanismo installa-prima-entra-dopo degli inviti del
-// coach — vedi il backend, modulo pagamenti.
-var EMAIL_OK = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+// "lo collegherei già al bottone se abbiamo già tutto il giro ok"). Niente campo
+// email sul sito (conversazione 2026-09-21 — "se uno ha deciso, inizia diretto"):
+// la raccoglie Stripe stesso nella sua pagina di checkout. Il pagamento non crea
+// l'account: genera un codice invito che arriva mostrato sulla pagina di grazie
+// (jamp-ai-grazie.html), stesso meccanismo installa-prima-entra-dopo degli inviti
+// del coach — vedi il backend, modulo pagamenti.
 async function iniziaJampAi() {
-  var emailEl = document.getElementById('jai-email');
   var errEl = document.getElementById('jai-err');
   var btn = document.getElementById('jai-btn');
-  var email = emailEl.value.trim();
   errEl.style.display = 'none';
-  if (!EMAIL_OK.test(email)) {
-    errEl.textContent = "Inserisci un'email valida.";
-    errEl.style.display = 'block';
-    return;
-  }
   btn.disabled = true;
   var testoOriginale = btn.textContent;
   btn.textContent = 'Un secondo…';
@@ -515,7 +548,7 @@ async function iniziaJampAi() {
     var res = await fetch('https://app.jampcoaching.it/public/jamp-ai/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email }),
+      body: JSON.stringify({}),
     });
     var data = await res.json();
     if (res.ok && data.url) {
