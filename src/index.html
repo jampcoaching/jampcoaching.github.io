@@ -370,8 +370,9 @@
           <li>Percorso a skill, rank e progressi tracciati</li>
           <li>Community e notifiche incluse</li>
         </ul>
-        <div style="margin-top:auto">
-          <button type="button" class="btn btn-primary" id="jai-btn" onclick="iniziaJampAi()" style="width:100%;justify-content:center">Inizia con Jamp AI →</button>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:0.5rem">
+          <button type="button" class="btn btn-primary" onclick="iniziaJampAi('mensile', this)" style="width:100%;justify-content:center">Inizia mensile — 30€/mese</button>
+          <button type="button" class="btn" onclick="iniziaJampAi('annuale', this)" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Inizia annuale — 300€/anno <span style="color:var(--green)">(2 mesi gratis)</span></button>
           <div class="err" id="jai-err"></div>
         </div>
       </div>
@@ -537,9 +538,8 @@ function salvaInAttesa(form) {
 // l'account: genera un codice invito che arriva mostrato sulla pagina di grazie
 // (jamp-ai-grazie.html), stesso meccanismo installa-prima-entra-dopo degli inviti
 // del coach — vedi il backend, modulo pagamenti.
-async function iniziaJampAi() {
+async function iniziaJampAi(piano, btn) {
   var errEl = document.getElementById('jai-err');
-  var btn = document.getElementById('jai-btn');
   errEl.style.display = 'none';
   btn.disabled = true;
   var testoOriginale = btn.textContent;
@@ -548,7 +548,7 @@ async function iniziaJampAi() {
     var res = await fetch('https://app.jampcoaching.it/public/jamp-ai/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({}),
+      body: JSON.stringify({ piano: piano }),
     });
     var data = await res.json();
     if (res.ok && data.url) {
