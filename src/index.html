@@ -216,7 +216,7 @@
       <span class="tagpill">100% online</span>
     </div>
     <h1>Il salto verso le tue prime<br><em>skill</em> a corpo libero.<br>Lo puoi fare <em>ora</em> e non "un giorno".</h1>
-    <p>Jamp è questo: il salto da dove sei oggi a dove ti porto io. Due modi per farlo — coaching 1:1 esclusivo, con correzioni sui tuoi video e informazioni premium per crescere più veloce di chi si allena da solo, oppure Jamp AI per iniziare subito in autonomia. Niente schede fotocopiate: ogni percorso pensato apposta.</p>
+    <p>Jamp è questo: il salto da dove sei oggi a dove ti porto io. Due modi per farlo — coaching 1:1 esclusivo, con correzioni sui tuoi video e informazioni premium per crescere più veloce di chi si allena da solo, oppure Jamp AI per iniziare subito in autonomia, gratis. Niente schede fotocopiate: ogni percorso pensato apposta.</p>
     <a href="#percorsi" class="btn btn-primary btn-big">Scopri i percorsi →</a>
   </div>
 </header>
@@ -361,8 +361,8 @@
       <div class="plan">
         <span class="ribbon" style="background:var(--green);color:#0a1a10">Disponibile ora</span>
         <h3>Jamp AI</h3>
-        <div class="dur">autogestito, guidato dall'AI · mensile</div>
-        <div class="price">€30<span> /mese</span></div>
+        <div class="dur">autogestito, guidato dall'AI · gratis</div>
+        <div class="price">Gratis</div>
         <ul>
           <li>Quiz iniziale, prima scheda pronta subito</li>
           <li>L'AI legge i tuoi test e propone la settimana dopo</li>
@@ -370,10 +370,8 @@
           <li>Percorso a skill, rank e progressi tracciati</li>
           <li>Community e notifiche incluse</li>
         </ul>
-        <div style="margin-top:auto;display:flex;flex-direction:column;gap:0.5rem">
-          <button type="button" class="btn btn-primary" onclick="iniziaJampAi('mensile', this)" style="width:100%;justify-content:center">Inizia mensile — 30€/mese</button>
-          <button type="button" class="btn" onclick="iniziaJampAi('annuale', this)" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Inizia annuale — 300€/anno <span style="color:var(--green)">(2 mesi gratis)</span></button>
-          <div class="err" id="jai-err"></div>
+        <div style="margin-top:auto">
+          <a class="btn btn-primary" href="https://app.jampcoaching.it/" style="width:100%;justify-content:center">Inizia gratis</a>
         </div>
       </div>
 
@@ -459,7 +457,7 @@
     </details>
     <details class="faq-item">
       <summary>Che differenza c'è tra Coaching 1:1 e Jamp AI?</summary>
-      <div>Il metodo e le soglie tecniche sono le stesse. Nel coaching 1:1 guardo i tuoi video e ti correggo di persona, con informazioni premium al momento giusto. In Jamp AI la lettura dei test e la proposta della settimana le fa l'intelligenza artificiale, sulle stesse regole che ho scritto io — costa meno, ma il seguimento non è lo stesso.</div>
+      <div>Il metodo e le soglie tecniche sono le stesse. Nel coaching 1:1 guardo i tuoi video e ti correggo di persona, con informazioni premium al momento giusto. In Jamp AI la lettura dei test e la proposta della settimana le fa l'intelligenza artificiale, sulle stesse regole che ho scritto io — è gratis, ma il seguimento non è lo stesso.</div>
     </details>
     <details class="faq-item">
       <summary>Perché il coaching 1:1 ha pochi posti?</summary>
@@ -529,40 +527,6 @@ function salvaInAttesa(form) {
     }
   } catch (e) {}
   return true;   // il modulo prosegue comunque verso formsubmit
-}
-
-// Jamp AI: checkout vero, non piu' una lista d'attesa (conversazione 2026-09-21 —
-// "lo collegherei già al bottone se abbiamo già tutto il giro ok"). Niente campo
-// email sul sito (conversazione 2026-09-21 — "se uno ha deciso, inizia diretto"):
-// la raccoglie Stripe stesso nella sua pagina di checkout. Il pagamento non crea
-// l'account: genera un codice invito che arriva mostrato sulla pagina di grazie
-// (jamp-ai-grazie.html), stesso meccanismo installa-prima-entra-dopo degli inviti
-// del coach — vedi il backend, modulo pagamenti.
-async function iniziaJampAi(piano, btn) {
-  var errEl = document.getElementById('jai-err');
-  errEl.style.display = 'none';
-  btn.disabled = true;
-  var testoOriginale = btn.textContent;
-  btn.textContent = 'Un secondo…';
-  try {
-    var res = await fetch('https://app.jampcoaching.it/public/jamp-ai/checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ piano: piano }),
-    });
-    var data = await res.json();
-    if (res.ok && data.url) {
-      window.location.href = data.url;
-      return;
-    }
-    errEl.textContent = 'Non ci sono riuscito, riprova fra un minuto.';
-    errEl.style.display = 'block';
-  } catch (e) {
-    errEl.textContent = 'Errore di connessione, riprova.';
-    errEl.style.display = 'block';
-  }
-  btn.disabled = false;
-  btn.textContent = testoOriginale;
 }
 
 // Menu mobile: sotto 768px il menu spariva del tutto, senza modo di riaprirlo
