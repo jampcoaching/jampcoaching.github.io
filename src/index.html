@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Brand: JampCoaching (Jam + jump — il salto da dove sei a dove ti porto) -->
   <title>JampCoaching — Coaching Calisthenics 1:1 e Jamp AI</title>
-  <meta name="description" content="Il salto verso le tue prime skill a corpo libero. Coaching 1:1 ad alta intensità di seguimento o Jamp AI per iniziare subito in autonomia: valutazione con test, programma su misura, tracker condiviso.">
+  <meta name="description" content="Il salto verso le tue prime skill a corpo libero. Coaching 1:1 ad alta intensità di seguimento o Jamp AI gratis su invito per allenarti in autonomia: valutazione con test, programma su misura, tracker condiviso.">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="JampCoaching — Coaching Calisthenics 1:1 e Jamp AI">
@@ -160,11 +160,11 @@
       display:flex;gap:0.6rem;align-items:baseline;
     }
     .plan li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;}
-    .plan input[type=email]{
+    .plan input[type=email],.plan input[type=text],.plan select{
       width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;
-      color:var(--text);font-family:inherit;font-size:0.92rem;padding:0.7rem 0.9rem;margin-bottom:0.6rem;
+      color:var(--text);font-family:inherit;font-size:0.92rem;padding:0.7rem 0.9rem;
     }
-    .plan input[type=email]:focus{outline:none;border-color:var(--accent);}
+    .plan input[type=email]:focus,.plan input[type=text]:focus,.plan select:focus{outline:none;border-color:var(--accent);}
     .plan .err{color:#ff6b6b;font-size:0.8rem;margin-top:0.5rem;display:none;}
     .plan .wip-price{font-family:'IBM Plex Mono',monospace;font-size:1.15rem;color:var(--muted);}
 
@@ -216,7 +216,7 @@
       <span class="tagpill">100% online</span>
     </div>
     <h1>Il salto verso le tue prime<br><em>skill</em> a corpo libero.<br>Lo puoi fare <em>ora</em> e non "un giorno".</h1>
-    <p>Jamp è questo: il salto da dove sei oggi a dove ti porto io. Due modi per farlo — coaching 1:1 esclusivo, con correzioni sui tuoi video e informazioni premium per crescere più veloce di chi si allena da solo, oppure Jamp AI per iniziare subito in autonomia, gratis. Niente schede fotocopiate: ogni percorso pensato apposta.</p>
+    <p>Jamp è questo: il salto da dove sei oggi a dove ti porto io. Due modi per farlo — coaching 1:1 esclusivo, con correzioni sui tuoi video e informazioni premium per crescere più veloce di chi si allena da solo, oppure Jamp AI, gratis su invito, per allenarti in autonomia. Niente schede fotocopiate: ogni percorso pensato apposta.</p>
     <a href="#percorsi" class="btn btn-primary btn-big">Scopri i percorsi →</a>
   </div>
 </header>
@@ -329,11 +329,11 @@
     <div class="plans">
 
       <div class="plan featured">
-        <span class="ribbon" style="background:var(--accent);color:#100b09">Pochi posti</span>
+        <span class="ribbon" style="background:var(--accent);color:#100b09">Premium · pochi posti</span>
         <h3>Coaching 1:1</h3>
-        <div class="dur">100% online · seguimento esclusivo · mensile</div>
-        <div class="price">€150<span> /mese</span></div>
-        <ul>
+        <div class="dur">100% online · seguimento esclusivo · su chiamata</div>
+        <div class="wip-price">Prezzo in chiamata</div>
+        <ul style="margin-top:1.4rem">
           <li>Valutazione iniziale con test: pulito o da correggere</li>
           <li>Programma personalizzato, aggiornato a ogni check</li>
           <li>Correzioni sui tuoi video, non solo numeri</li>
@@ -342,26 +342,27 @@
           <li>Chat per dubbi tecnici, risposta entro 48h</li>
         </ul>
         <div style="margin-top:auto">
-          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem">Sto seguendo gli atleti già in percorso e non apro nuovi posti finché non posso garantire lo stesso livello di attenzione. Lascia la tua email: sei il primo a saperlo quando riapro.</p>
+          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem">Prima di iniziare ci sentiamo in una chiamata conoscitiva: guardiamo dove sei, dove vuoi arrivare e se il percorso fa per te. Lì ti presento durata e prezzo. Lascia i tuoi contatti e ti scrivo per fissarla.</p>
           <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
                 onsubmit="salvaInAttesa(this)" style="display:flex;flex-direction:column;gap:0.6rem">
-            <input type="hidden" name="_subject" value="Lista d'attesa coaching 1:1">
+            <input type="hidden" name="_subject" value="Richiesta call coaching 1:1">
             <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_autoresponse" value="Sei in lista d'attesa per il coaching 1:1. Ti scrivo appena riapro le iscrizioni. — JampCoaching">
-            <input type="hidden" name="_source" value="coaching-1-1">
+            <input type="hidden" name="_autoresponse" value="Ho ricevuto la tua richiesta per il coaching 1:1. Ti scrivo a breve per fissare la chiamata conoscitiva. — JampCoaching">
+            <input type="hidden" name="_source" value="coaching-1-1-call">
             <input type="text" name="_honey" style="display:none">
-            <label for="c11-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">La tua email</label>
-            <input type="email" id="c11-email" name="Email" required placeholder="La tua email">
-            <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Avvisami quando riapro</button>
+            <input type="text" name="Nome" required placeholder="Il tuo nome" aria-label="Il tuo nome">
+            <input type="email" name="Email" required placeholder="La tua email" aria-label="La tua email">
+            <input type="text" name="WhatsApp o Instagram" placeholder="WhatsApp/IG (facoltativo)" aria-label="WhatsApp o Instagram, facoltativo">
+            <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Richiedi la chiamata</button>
           </form>
         </div>
       </div>
 
       <div class="plan">
-        <span class="ribbon" style="background:var(--green);color:#0a1a10">Disponibile ora</span>
+        <span class="ribbon" style="background:var(--green);color:#0a1a10">Base · gratis</span>
         <h3>Jamp AI</h3>
-        <div class="dur">autogestito, guidato dall'AI · gratis</div>
+        <div class="dur">autogestito, guidato dall'AI · su invito</div>
         <div class="price">Gratis</div>
         <ul>
           <li>Quiz iniziale, prima scheda pronta subito</li>
@@ -371,7 +372,24 @@
           <li>Community e notifiche incluse</li>
         </ul>
         <div style="margin-top:auto">
-          <a class="btn btn-primary" href="https://app.jampcoaching.it/" style="width:100%;justify-content:center">Inizia gratis</a>
+          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem">L'accesso è gratuito ma su invito: scrivimi e ti mando io il tuo, così so chi entra e da dove parti.</p>
+          <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
+                onsubmit="salvaInAttesa(this)" style="display:flex;flex-direction:column;gap:0.6rem">
+            <input type="hidden" name="_subject" value="Richiesta invito Jamp AI">
+            <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Ho ricevuto la tua richiesta per Jamp AI. Ti mando l'invito a breve. — JampCoaching">
+            <input type="hidden" name="_source" value="jamp-ai-invito">
+            <input type="text" name="_honey" style="display:none">
+            <input type="email" name="Email" required placeholder="La tua email" aria-label="La tua email">
+            <select name="Livello" required aria-label="Il tuo livello">
+              <option value="" disabled selected>A che livello sei?</option>
+              <option>Principiante</option>
+              <option>Intermedio</option>
+              <option>Avanzato</option>
+            </select>
+            <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Chiedi l'invito</button>
+          </form>
         </div>
       </div>
 
@@ -457,7 +475,7 @@
     </details>
     <details class="faq-item">
       <summary>Che differenza c'è tra Coaching 1:1 e Jamp AI?</summary>
-      <div>Il metodo e le soglie tecniche sono le stesse. Nel coaching 1:1 guardo i tuoi video e ti correggo di persona, con informazioni premium al momento giusto. In Jamp AI la lettura dei test e la proposta della settimana le fa l'intelligenza artificiale, sulle stesse regole che ho scritto io — è gratis, ma il seguimento non è lo stesso.</div>
+      <div>Il metodo e le soglie tecniche sono le stesse. Nel coaching 1:1 guardo i tuoi video e ti correggo di persona, con informazioni premium al momento giusto. In Jamp AI la lettura dei test e la proposta della settimana le fa l'intelligenza artificiale, sulle stesse regole che ho scritto io — è gratis su invito, ma il seguimento non è lo stesso.</div>
     </details>
     <details class="faq-item">
       <summary>Perché il coaching 1:1 ha pochi posti?</summary>
