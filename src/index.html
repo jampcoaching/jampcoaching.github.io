@@ -345,7 +345,8 @@
           <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem">Prima di iniziare ci sentiamo in una chiamata conoscitiva: guardiamo dove sei, dove vuoi arrivare e se il percorso fa per te. Lì ti presento durata e prezzo. Lascia i tuoi contatti e ti scrivo per fissarla.</p>
           <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
                 onsubmit="salvaInAttesa(this)" style="display:flex;flex-direction:column;gap:0.6rem">
-            <input type="hidden" name="_subject" value="Richiesta call coaching 1:1">
+            <input type="hidden" name="_subject" value="[Coaching 1:1] Richiesta chiamata">
+            <input type="hidden" name="Prodotto" value="Coaching 1:1">
             <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_autoresponse" value="Ho ricevuto la tua richiesta per il coaching 1:1. Ti scrivo a breve per fissare la chiamata conoscitiva. — JampCoaching">
@@ -375,7 +376,8 @@
           <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem">L'accesso è gratuito ma su invito: scrivimi e ti mando io il tuo, così so chi entra e da dove parti.</p>
           <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
                 onsubmit="salvaInAttesa(this)" style="display:flex;flex-direction:column;gap:0.6rem">
-            <input type="hidden" name="_subject" value="Richiesta invito Jamp AI">
+            <input type="hidden" name="_subject" value="[Jamp AI] Richiesta invito">
+            <input type="hidden" name="Prodotto" value="Jamp AI (base gratis)">
             <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_autoresponse" value="Ho ricevuto la tua richiesta per Jamp AI. Ti mando l'invito a breve. — JampCoaching">
@@ -406,14 +408,17 @@
         <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
               onsubmit="salvaInAttesa(this)"
               style="margin:auto 0 0;display:flex;flex-direction:column;gap:0.6rem">
-          <input type="hidden" name="_subject" value="Interesse Jamp Infrastruttura">
+          <input type="hidden" name="_subject" value="[Jamp Infrastruttura] Richiesta">
+          <input type="hidden" name="Prodotto" value="Jamp Infrastruttura">
           <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_autoresponse" value="Grazie dell'interesse per Jamp Infrastruttura — è ancora in lavorazione, ti scrivo io appena è pronta da mostrare. — JampCoaching">
           <input type="hidden" name="_source" value="jamp-infrastruttura">
           <input type="text" name="_honey" style="display:none">
+          <input type="text" name="Nome" required placeholder="Il tuo nome" aria-label="Il tuo nome">
           <input type="email" name="Email" required placeholder="La tua email" aria-label="La tua email">
-          <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Manda la richiesta</button>
+          <input type="text" name="WhatsApp o Instagram" placeholder="WhatsApp/IG (facoltativo)" aria-label="WhatsApp o Instagram, facoltativo">
+          <button class="btn" type="submit" style="width:100%;justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text)">Richiedi informazioni</button>
         </form>
       </div>
 
@@ -430,7 +435,8 @@
         <form action="https://formsubmit.co/info@jampcoaching.it" method="POST"
               onsubmit="salvaInAttesa(this)"
               style="margin:auto 0 0;display:flex;flex-direction:column;gap:0.6rem">
-          <input type="hidden" name="_subject" value="Interesse Jamp Project">
+          <input type="hidden" name="_subject" value="[Jamp Project] Richiesta">
+          <input type="hidden" name="Prodotto" value="Jamp Project">
           <input type="hidden" name="_next" value="https://jampcoaching.it/grazie.html">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_autoresponse" value="Grazie dell'interesse per Jamp Project — è ancora in lavorazione, ti scrivo io appena posso parlartene. — JampCoaching">
